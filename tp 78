@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+bool BuscaVal(const vector<int> &v, int val);
+int main() {
+    vector<int> vectorEnteros;
+    int valorBuscado;
+
+    cout << "Ingrese 8 elementos enteros en el vector:" << endl;
+    for (int i = 0; i < 8; i++) {
+        int elemento;
+        cin >> elemento;
+        vectorEnteros.push_back(elemento);
+    }
+
+    cout << "Ingrese el valor a buscar: ";
+    cin >> valorBuscado;
+
+    if (BuscaVal(vectorEnteros, valorBuscado)) {
+        cout << "El valor " << valorBuscado << " existe en el vector." << endl;
+    } else {
+        cout << "El valor " << valorBuscado << " no existe en el vector." << endl;
+    }
+
+    return 0;
+}
+
+bool BuscaVal(const vector<int> &v, int val) {
+    for (int i = 0; i < v.size(); i++) {
+        if (v[i] == val) {
+            return true;
+        }
+    }
+    return false;
+}
